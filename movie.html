@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head><title>Homepage</title>
+<style>
+#menubar {
+	background : silver;
+}
+#menubar ul { 
+	margin : 0;
+	padding : 0;
+	width : 800px; 
+}
+#menubar ul li {
+	display : inline-block;	 
+	list-style-type : none; 
+	padding : 5px 15px;	 
+}
+#menubar ul li a {
+	color : white;
+	text-decoration : none;
+}
+#menubar ul li a:hover {
+	color : violet; 
+}
+h4 {
+    font-size : 20px;
+    color : navy;
+    background-color: wheat;
+    width : 560px;
+	height : 40px;
+
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section p {
+    background-color: lavender;
+    font-size : 17px;
+    font-weight : 600; 
+}
+</style></head>
+<body>
+<script>
+var today = new Date();        
+document.write("현재 웹 페이지에 방문한 시간 : " + today.toLocaleString() + "<br>");
+</script>
+<h1>COVID19 IMFORMATION HOMEPAGE</h1>
+<nav id="menubar">
+	<ul>
+		<li><a href="home.html">Home</a></li>
+		<li><a href="vacc.html">코로나 백신 정보</a></li>
+		<li><a href="social_distance.html">단계적 일상회복 현황</a></li>
+		<li><a href="covid_welfare.html">국민지원금 및 여행 현황</a></li>
+        <li><a href="movie.html">참고 영상</a></li>
+	</ul>
+</nav>
+	<header>
+		<h1>코로나가 야기한 결과</h1>
+        <p>
+            코로나바이러스로 인한 세계적으로 큰 문제를 겪고 있다.<br>
+            이에 대해서 보고 참고하면 좋을 영상들을 아래에 남겨두었다.<br>
+        </p>
+	</header>
+	<nav>
+        <ul>
+            <li><a href= "#inflation">인플레이션 초래</a></li>
+            <li><a href="#bitcoin">인플레이션과 비트코인</a></li>
+            <li><a href="#supply">코로나로 인한공급망 붕괴</a></li>
+            <li><a href="#mac">맥도날드 감자튀김 대란?</a></li>
+            <li><a href="#capital_gap">빈부격차와 실업률</a></li>
+            <li><a href="#metaverse">언텍트 시대와 메타버스</a></li>
+            <li><a href="#NFT">메타버스와 NFT</a></li>
+        </ul>
+	</nav>
+	<section>
+        <h4 id="inflation">코로나가 낳은 인플레이션</h4>
+        <p>
+            코로나의 창궐로 인해 세계의 각 정부들은 양적 완화를 진행하며 화폐를 지속해서 찍어내기 시작했고, 이는 인플레이션을 유발하는 결과를 초래했다.
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/n26J4QucxyE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2AiCQ3Clh_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4 id="bitcoin">인플레이션으로 인한 비트코인의 주목?</h4>
+        <p>
+            인플레이션으로 부터 기존의 화폐 가치를 보호할 수 있는 수단으로 "추가발행을 할 수 없는" 비트코인이 주목을 받는다.
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yQODK8Ypf4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4 id="supply">코로나 확산으로 인한 공급망 붕괴</h4>
+        <p>
+            각종 변이의 발생으로 인한 코로나 상황의 심화로 인해 물자의 공급망이 붕괴되는 현상이 초래한다. 
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wFwBjIQQkRw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4 id="mac">백신 보급으로 인한 감자튀김 대란?</h4>
+        <p>
+            코로나 백신 보급 과정에서 맥도날드의 감자튀김이 메뉴에서 사라지는 사태가 발생한다.
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/E9GemdfYYug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4 id ="capital_gap">빈부격차와 실업률 증가</h4>
+        <p>
+            코로나로 인한 양적 완화로 기존 화폐의 가치가 감소하면서 이로 인한 빈부격차는 더욱 커지게 되었다.
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JhBdLkLCdrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/M0mRtMBwILM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4 id="metaverse">언텍트 시대와 메타버스의 성장</h4>
+        <p>
+            비대면 시대가 도래함에 따라 가상세계 '메타버스' 산업이 큰 주목을 받게 됀다.
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_517LtrgYYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4 id="NFT">메타버스와 NFT</h4>
+        <p>
+            메타버스 세계와 연동하여 사용하는 새로운 화폐개념 'NFT'
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pH7OKXpNT6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+	<aside>
+	</aside>	
+	<footer>
+        <br>
+        <hr>
+		<h5>정보출처 : 네이버 뉴스, 네이버 지식백과, wiki<h5>
+	</footer>
+</body>
+</html>

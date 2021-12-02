@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head><title>Homepage</title>
+<style>
+
+/* 
+    navigation 기능을 담당할 bar 생성 
+    이를 이용하여 원하는 정보가 있는 웹 사이트로 이동을 도움
+    inline block 형태로 배열되게 하여 일렬로 살펴볼 수 있도록 함
+*/
+#menubar {
+	background : silver;
+}
+#menubar ul { 
+	margin : 0;
+	padding : 0;
+	width : 800px; 
+}
+#menubar ul li {
+	display : inline-block;	 
+	list-style-type : none; 
+	padding : 5px 15px;	 
+}
+#menubar ul li a {
+	color : white;
+	text-decoration : none;
+}
+#menubar ul li a:hover {
+	color : violet; 
+}
+
+/* 
+    header의 div 문단에 존재하는 내용들에 대한 설정
+    박스 모델에 대한 설정으로 너비, 높이, 글씨크기, 정렬 방법을 정함   
+*/
+header div {
+    background-color: wheat;
+    width : 850px;
+	height : 70px;
+	font-size : 16px;
+
+    /* 정렬 설정을 통해 박스 내 텍스트가 왼쪽 가운데로 정렬 */
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 본문의 section 부분에 대한 배경색과 글씨 크기와 굵기 설정 */
+section {
+    background-color: lavender;
+    font-size : 16px;
+    font-weight : 450; 
+}
+
+/* BGM 창이 웹페이지 우측에 고정될 수 있도록 설정*/
+#right {
+    float : right; 
+}
+
+</style>
+
+<!-- 
+    prompt 창을 통해 원하는 키워드를 입력 시 키워드에 대한 정보가 있는 사이트로 이동을 도움
+    my_text를 통해 입력한 키워드를 확인 후 case문을 통해 어느 키워드(주어진 것 중에서만 입력)가 들어왔는지 비교 후 맞는 사이트로 이동
+    만약 잘못된 키워드가 들어왔을 시, 다시 입력하라는 alert문과 함께 home 상단으로 이동
+-->
+<script type="text/javascript">
+    function checkKeyword()
+    {
+        var my_text = prompt("제시된 키워드 중에서 알아보고 싶은 정보를 입력해주세요.");
+        switch(my_text)
+        {
+            case "코로나바이러스":
+                alert("HOME에서 코로나바이러스의 정보를 확인할 수 있습니다.");
+                return("home.html");
+                break;
+            case "변종코로나":
+                alert("HOME에서 코로나바이러스의 정보를 확인할 수 있습니다.");
+                return("home.html");
+                break;
+            case "백신":
+                alert("백신 정보가 있는 웹 페이지로 이동합니다.");
+                return("vacc.html");
+                break;
+            case "여행":
+                alert("여행 정보가 있는 웹 페이지로 이동합니다.");
+                return("covid_welfare.html");
+                break;
+            case "위드코로나":
+                alert("위드코로나 정보가 있는 웹 페이지로 이동합니다.");
+                return("covid_welfare.html");
+                break;
+            case "재난지원금":
+                alert("재난지원금 정보가 있는 웹 페이지로 이동합니다.");
+                return("covid_welfare.html");
+                break;
+            case "포스트코로나":
+                alert("포스트코로나 시대로 인한 변화를 살펴볼 수 있는 참고영상 모음 사이트로 이동합니다.");
+                return("movie.html");
+                break;
+            case "단계적일상회복":
+                alert("단계적 일상회복 정보가 있는 웹 페이지로 이동합니다.");
+                return("social_distance.html");
+                break;
+            case "사회적거리두기":
+                alert("사회적 거리두기 정보가 있는 웹 페이지로 이동합니다.");
+                return("social_distance.html");
+                break;
+            default: // 주어진 키워드 이외의 것을 입력했을 경우
+                alert("정확한 키워드를 다시 입력하세요.");
+                return("home.html");
+                break;
+        }
+    }
+
+
+    // prompt 창을 통해 나이 값을 입력하면 입력받은 나이를 my_input에 저장
+    // 이후 입력받은 나이대를 if문으로 비교하고, 나이대에 맞는 코로나 정보 제공 
+    function checkAge(){
+        var my_input = prompt("자신의 나이를 입력하세요. (0~120 사이)");
+        if (my_input >= 0 && my_input < 20) {
+            alert("내 나이 : " + my_input +"\n20대 미만(1~19세) 코로나 확진 비율 : 16%\n코로나 치명률 : 0%\n주로 접종하는 백신 : 화이자, 모더나(희석된 형태로 접종)\n백신 추가접종 대상자 : 미해당");
+        }
+        else if (my_input >= 20 && my_input < 30) {
+            alert("내 나이 : " + my_input +"\n20대 코로나 확진 비율 : 17.25%\n코로나 치명률 : 0.02%\n주로 접종하는 백신 : 화이자, 모더나, 얀센\n백신 추가접종 대상자 : 미해당");
+        }
+        else if (my_input >= 30 && my_input < 40) {
+            alert("내 나이 : " + my_input +"\n30대 코로나 확진 비율 : 15.38%\n코로나 치명률 : 0.04%\n주로 접종하는 백신 : 화이자, 모더나, 얀센\n백신 추가접종 대상자 : 미해당");
+        }
+        else if (my_input >= 40 && my_input < 50) {
+            alert("내 나이 : " + my_input +"\n40대 코로나 확진 비율 : 15.24%\n코로나 치명률 : 0.08%\n주로 접종하는 백신 : 화이자, 모더나, 얀센\n백신 추가접종 대상자 : 미해당");
+        }
+        else if (my_input >= 50 && my_input < 60) {
+            alert("내 나이 : " + my_input +"\n50대 코로나 확진 비율 : 15.09%\n코로나 치명률 : 0.3%\n주로 접종하는 백신 : 화이자, 모더나, 얀센, AZ\n백신 추가접종 대상자 : 해당\n추가접종 정보 및 신청 : 질병관리청 예방접종 사전예약 시스템 사이트에서 신청(https://ncvr2.kdca.go.kr/)");
+        }
+        else if (my_input >= 60 && my_input < 70) {
+            alert("내 나이 : " + my_input +"\n60대 코로나 확진 비율 : 12.49%\n코로나 치명률 : 0.92%\n주로 접종하는 백신 : 화이자, 모더나, 얀센, AZ\n백신 추가접종 대상자 : 해당\n추가접종 정보 및 신청 : 질병관리청 예방접종 사전예약 시스템 사이트에서 신청(https://ncvr2.kdca.go.kr/)");
+        }
+        else if (my_input >= 70 && my_input < 80) {
+            alert("내 나이 : " + my_input +"\n70대 코로나 확진 비율 : 5.44%\n코로나 치명률 : 3.93%\n주로 접종하는 백신 : 화이자, 모더나, 얀센, AZ\n백신 추가접종 대상자 : 해당\n추가접종 정보 및 신청 : 질병관리청 예방접종 사전예약 시스템 사이트에서 신청(https://ncvr2.kdca.go.kr/)");
+        }
+        else if (my_input >= 80 && my_input <= 120) {
+            alert("내 나이 : " + my_input +"\n80대 이상 코로나 확진 비율 : 3.1%\n코로나 치명률 : 13.07%\n주로 접종하는 백신 : 화이자, 모더나, 얀센, AZ\n백신 추가접종 대상자 : 해당\n추가접종 정보 및 신청 : 질병관리청 예방접종 사전예약 시스템 사이트에서 신청(https://ncvr2.kdca.go.kr/)");
+        }
+        else { // 0~120 사이의 값 외의 값이 들어온 경우 경고문 출력
+            alert("나이를 정확하게 다시 입력해주세요. (0~120 사이 값 입력)")
+        }
+
+    }
+
+</script>
+</head>
+<body>
+    <!-- 홈페이지 맨 위에 자신이 홈페이지에 방문한 시점을 나타내기 위한 코드 -->
+<script>
+    var today = new Date();        
+    document.write("현재 웹 페이지에 방문한 시간 : " + today.toLocaleString() + "<br>");
+</script>
+<p id="right">
+    <audio src="BGM1.mp3" autoplay controls>
+        브라우저가 오디오를 지원하지 않습니다.
+    </audio>
+</p>
+<h1>COVID19 IMFORMATION HOMEPAGE</h1>
+<!-- 홈페이지 상단에 bar에 해당. 원하는 정보에 해당하는 부분을 누르면 그에 맞는 사이트로 이동 -->
+<nav id="menubar">
+	<ul>
+		<li><a href="home.html">Home</a></li>
+		<li><a href="vacc.html">코로나 백신 정보</a></li>
+		<li><a href="social_distance.html">단계적 일상회복 현황</a></li>
+		<li><a href="covid_welfare.html">국민지원금 및 여행 현황</a></li>
+        <li><a href="movie.html">참고 영상</a></li>
+	</ul>
+</nav>
+	<header>
+        <!-- 홈페이지 대문, 홈페이지 제작 목적을 밝힘-->
+		<h1>HOME</h1>
+        <h2>홈페이지 제작 목적</h2>
+        <div>
+            코로나바이러스에 대한 보다 세부적인 정보를 제공하고, 참고하면 유용한 사이트들을 소개하기 위함입니다.<br>
+            한국, 해외의 코로나 현황, 백신에 대한 정보, 잘못 알고 있는 사실 등을 이 사이트의 정보를 통해서 제공하고자 합니다.<br>
+            아래의 소제목들을 클릭하면 제목과 관련한 내용을 확인할 수 있습니다.<br>
+        </div>
+        <br>
+        <!-- 입력하기 버튼을 누르면 주어진 키워드 중 하나를 입력받았을 때 그 정보가 있는 사이트로 이동하게 하는 영역 -->
+        <h2>원하는 정보를 입력해보세요</h2>
+        <div>
+            입력하기 버튼을 누르고 제시되어 있는 키워드 중에서, 관심 있는 정보를 입력하세요.<br>
+            키워드와 관련 있는 정보가 있는 웹 페이지로의 이동을 도와줄 것입니다.
+        </div>
+        <br>
+        <!-- lengend를 통하여 키워드를 감싸는 틀 형성. button을 클릭하면 onclick을 통해 myFuction()함수가 실행되게 만듬-->
+        <form>
+            <fieldset>
+                <legend>키워드 검색</legend>
+                <label>코로나바이러스, 변종코로나, 백신, 여행, 위드코로나, 재난지원금, 포스트코로나, 단계적일상회복, 사회적거리두기</label><br>
+                <button type = "button" onclick="location.href = checkKeyword()">입력하기</button><br>
+            </fieldset>
+        </form>
+        <br>
+        <!-- 입력 버튼을 누르고 나이를 입력하면, 나이대에 맞는 코로나 정보를 제공해주는 영역-->
+        <h2>내 나이의 코로나 정보를 확인해보세요</h2>
+        <div>
+            아래의 "입력" 버튼을 누르고 자신의 나이를 입력해보세요.<br>
+            나이에 따른 코로나 정보를 제공할 것입니다.<br>
+            <!-- 마찬가지로 button을 누르면 checkAge()함수가 실행하여 나이를 판단하고 맞는 정보 제공 -->
+        </div>
+        <br>
+        <form>
+            <button onclick="checkAge();"">입력</button>
+        </form>
+        <br>
+	</header>
+	<nav>
+	</nav>
+	<section>
+            <details>
+                <!-- 
+                    여기부터 앞으로 모든 페이지에서 유튜브 영상을 첨부할 시 iframe을 이용함.
+                    유튜브 > 원하는 영상 클릭 > 공유 버튼 클릭 > 퍼기가 버튼 클릭 > 제공하는 iframe 코드를 복사 후 붙여넣기를 통해
+                    보면 유용할 영상을 내 html에 첨부.
+
+                    정보들이 홈페이지에 일렬로 그대로 나열되어 있으면 이미 보았던 정보를 다시 보기 위해서 스크롤을 많이 올려야 함.
+                    그렇기에 대부분의 정보들은 summary를 이용하여 보고 싶은 정보를 접었다 폈다 할 수 있도록 하여 홈페이지 열람을 편하게 만듬.
+                    
+                    아래는 현재 새롭게 발생한 코로나 변이인 오미크론에 대한 간단히 설명하고, 현재 뉴스를 통해 알려진 정보를 영상을 첨부하여 설명.
+                -->
+			<summary>변종 오미크론 발생 (21.11.24 속보)</summary>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iU0n4IXF6dg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+            <p>
+                변종 오미크론은 남아프리카공화국에서 24일에 WHO로 보고된 새로운 코로나 변종 바이러스다.<br>
+                그 결과 유럽연합 회원국들이 남부 아프리카 7개국을 대상으로 여객 항공편을 중단하였다.<br>
+                21.11.26일에 WHO는 이 변이 바이러스를 '오미크론'으로 명명하고 우려 변이로 지정하였는데,<br>
+                전파력이 델타 변이보다 더 강하고, 백신과 치료제가 무력화될 수 있는 우려사항이 존재하기 때문이다.<br>
+                이미 이스라엘, 영국 등 유럽 지역에 확산이 시작되었으며, 그 결과 국제 유가와 증시가 급락하였다.<br>
+			</p>
+            </details>
+            <details>   
+            <!-- 
+                covid-19라는 명칭이 어떻게 유래하였고, 유전적으로 어떻게 구성되는지 간단한 설명 
+                유용한 사이트는 a href를 통해 링크를 걸어 연결
+                href를 통해 링크를 연결 시, 원래 보던 웹페이지를 방해하지 않도록 새로운 창에서 실행되도록 target = "_black" 추가
+            -->  
+			<summary>Covid-19?</summary>
+            <figure>
+                <img src="covid.jfif">
+            </figure>	
+			<p>
+                코로나바이러스는 19년 12월에 중국 우한에서 처음 발병되어 이후 중각의 전역과 전 세계로 확산되었다.<br>
+                COrona Virus Disease의 COVID와 19년도에 발생했다는 19가 더해져 Covid-19라는 명칭이 정의되었다.<br><br>
+                감기를 일으키는 3대 바이러스 중 하나로, 현재까지 변이를 포함하여 총 7종류의 바이러스가 확인되었다.<br>
+                사람 뿐만 아니라 다양한 동물에 감염될 수 있는 유전자 크기(27~32kb)의 RNA 바이러스이다.<br>
+                Corona라는 바이러스 이름의 경우 전자현미경으로 봤을 때 바이러스 입자 표면이 돌기처럼 튀어나와 있는데,<br>
+                이 모양이 마치 왕관이나 태양의 코로나를 연상시킨다고 해서 라틴어로 왕관을 뜻하는 'Corona'에서 파생돼 명명됐다.<br><br>
+                보다 자세한 정보는 <a href ="http://ncov.mohw.go.kr/baroView.do?brdId=4&brdGubun=41&dataGubun=&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank">이곳</a>에서 확인할 수 있다.<br><br>                    
+			</p>
+            </details>
+            <!--
+                코로나 세계 현황에 대해 간략히 설명하고 자세한 실황을 실시간으로 볼 수 있는 사이트를 제공
+                필요한 경우에 안에 ul을 이용하여 필요한 내용들을 나열
+                도움이 될 이미지는 img를 이용하여 사이트에 표시
+            -->
+            <details>
+                <summary>코로나 세계 현황</summary>
+                <figure>
+                    <img src="covid19_map.jpg">
+                </figure>	
+                <p>
+                    2021년 11월을 기준으로 이미 전 세계적으로 2억 5천만명 이상이 확진되었다.<br>
+                    그 중 5백만명 이상이 사망하였고, 2억2천만명은 치료되어 격리해제 조치되었다.<br>
+                    그 중에서 한국을 살펴보면, 39만명 이상이 확진되었고, 3천명 이상이 사망하였다.<br>
+                    실시간으로 한국 및 세계 코로나 현황을 확할 수 있는 사이트는 아래를 클릭하면 확인할 수 있다.<br>
+                    <details>
+                        <summary>코로나 현황 사이트</summary>
+                        <ul>
+                            <li><a href ="https://coronaboard.kr/" target="_blank">세계적 현황 CoronaBoard</a>
+                            <li><a href ="https://corona-live.com/" target="_blank">한국 세부지역별 현황 CoronaLive</a>
+                        </ul>
+                    </details>
+                </p>
+                </details>
+                <!--
+                    코로나의 주요 증상과 치명률에 대해서 한 눈에 볼 수 있는 그림 자료 제공
+                -->
+                <details>
+                    <summary>코로나 주요 증상</summary>
+                    <figure>
+                        <img src="covideffect.png">
+                    </figure>	
+                    </details>
+                <details>
+                    <summary>코로나 치명률</summary>
+                    <figure>
+                        <img src="fatalityrate.jpg">
+                    </figure>	
+                </details>
+                <!--
+                    현재까지 알려진 치료법에 대해서 간략한 설명
+                    영상과 그림 자료를 통해 설명
+                -->
+                <details>
+                <summary>알려진 치료법?</summary>
+                <figure>
+                    <img src="covidcure.jfif">
+                </figure>
+                <h4>일반적인 치료법</h4>	
+                <p>
+                    확진시 보통 항바이러스제 혹은 항생제 등을 투여한다.<br>
+                    추가적으로 열이 나면 해열제나 수액 공급을 하는 등 증상에 따라 추가적인 조치를 한다.<br>
+                    항바이러스제 투여 없이 자가면역으로 치유가 되는 사례도 존재한다.<br>
+                    아래 영상을 통해서도 쉽게 확인할 수 있다.
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/fNl4kCvs9-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                <h4>자가격리를 하는 이유</h4>
+                <p>
+                    보통 치유가 된 경우에도 무증상으로 바이러스가 3~4주간 존재하기도 하는데,<br>
+                    이러한 이유 때문에 치료를 마쳤더라도 최소 2주 이상을 자가격리를 실시한다.<br><br>
+                    코로나 치료제로는 원래 다른 질병 치유의 목적이지만, 코로나 바이러스에도 쓰이는 치료제와,<br>
+                    현재 완전하진 않으나, 임상을 어느정도 통과한 코로나 치료제도 존재하는데 그 종류는 아래를 클릭하면 확인할 수 있다.<br>                    
+                </p>
+                <!--
+                    현존하는 코로나 치료제(임상 포함한 자료)에 대한 정보가 담겨 있는 정보 사이트 제공
+                -->
+                <details>
+                    <summary>현존하는 코로나 치료제 (임상 포함)</summary>
+                    <ul>
+                        <li><a href ="https://terms.naver.com/entry.naver?docId=5946241&cid=43667&categoryId=43667" target="_blank">렘데시비르</a>
+                        <li><a href ="https://terms.naver.com/entry.naver?docId=6214222&cid=43667&categoryId=43667" target="_blank">렉키로나주</a>
+                        <li><a href ="https://www.bbc.com/korean/international-58771536" target="_blank">몰누피라비르(FDA 2상 신청)</a>
+                        <li><a href ="https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%B9%84%ED%94%BC%EB%9D%BC%EB%B9%84%EB%A5%B4" target="_blank">피비피라비르</a>
+                        <li><a href ="http://www.press9.kr/news/articleView.html?idxno=46706" target="_blank">인공재조합 ACE-2 단백질</a>
+                    </ul>
+                </details>
+            </details>
+        <details>
+            <summary>코로나 예방 수칙</summary>	
+            <figure>
+                <img width="600" height="400" src="protect.jpg">
+            </figure>
+        </details>
+	</section>
+	<aside>
+	</aside>
+    <!--
+        사이트 최하단에 정보 출처가 어디인지 밝힘
+    -->	
+	<footer>
+        <br>
+        <hr>
+		<h5>정보출처 : 네이버 뉴스, 네이버 지식백과, wiki<h5>
+	</footer>
+</body>
+</html>
